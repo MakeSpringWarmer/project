@@ -34,6 +34,13 @@ public class faceController {
         return result;
     }
 
+    @GetMapping("/useridlist/{id}")
+    public List<String> getIdList(@PathVariable("id") String userface_id){
+        List<String> result = userfacedataService.findIdList(userface_id);
+        return result;
+
+    }
+
     @GetMapping("/userface/{id}")
     public userfacedata getOne(@PathVariable("id") String userface_id ){
         System.out.println("getSingle called id:" + userface_id) ;

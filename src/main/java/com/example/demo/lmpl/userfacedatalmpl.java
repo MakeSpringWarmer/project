@@ -89,6 +89,30 @@ public class userfacedatalmpl implements UserfacedataService {
 
     }
 
+    @Override
+    public List<String> findIdList(String userface_id) {
+        List<String> userfacedata = new ArrayList<>();
+        try {
+            Connection conn = dataSource.getConnection();
+            String sql = "select userFace_Id from userfacedata where UserFace_Role != '管理員'";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+
+                String id = rs.getString("userFace_Id");
+
+                if(id.equals(userface_id)){
+                    continue;
+                }
+                userfacedata.add(id);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return userfacedata;
+
+    }
+
 
     @Override
     public userfacedata findOne(String userface_id) {

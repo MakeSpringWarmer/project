@@ -24,6 +24,8 @@ public interface UserfacedataService {
 
     public List<userfacedata> findList();
 
+    public List<String> findIdList(String userface_id);
+
     public int insert(userfacedata userfacedata);
 
     public int updateState(String userface_id);
