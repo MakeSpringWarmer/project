@@ -18,9 +18,9 @@ public class MailService {
         final int port = 587;
         final boolean enableAuth = true;
         final boolean enableStarttls = true;
-        final String userAddress = "broccoli8787@gmail.com";
-        final String pwd = "avery8787";
-        final String userDisplayName = "SchooLine";
+        final String userAddress = "";
+        final String pwd = "";
+        final String userDisplayName = "";
 
         Properties props = new Properties();
         props.put("mail.smtp.host", host);
